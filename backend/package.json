@@ -2,6 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Creator's companion",
+  "type": "module",
   "scripts": {
     "devStart": "nodemon index.js"
   },
