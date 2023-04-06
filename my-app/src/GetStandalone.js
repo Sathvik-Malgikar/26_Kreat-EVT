@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import "./stndstyles.css"
+import React from 'react'
+import ReactDOM from 'react-dom'
 
 export default function GetStandalone(){
     console.log("hello")

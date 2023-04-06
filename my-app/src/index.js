@@ -5,7 +5,8 @@ import App from './App';
 import GetStandalone from './GetStandalone';
 import {BrowserRouter as Router,Link,Route, Routes} from "react-router-dom"
 import Register from './Register';
-import HomePage from './homePage';
+import HomePage from './HomePage';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,8 +15,8 @@ root.render(
   <Router>
     <Routes>
 
-    <Route path='/' element={<App></App>} ></Route>
-    <Route path = "/home" element = {<HomePage/>}></Route>
+    <Route path='/' element={<HomePage/>} ></Route>
+    {/* <Route path = "/home" element = {<HomePage/>}></Route> */}
     <Route path='/Register' element={<Register></Register>} ></Route>
     <Route path='/standalone' element={<GetStandalone></GetStandalone>} ></Route>
     </Routes>
