@@ -49,3 +49,20 @@ export const login = async (req,res) => {
         res.status(400).json({error:err.message})
     }
 }
+
+
+export const logincheck = async (req,res) => {
+    try{
+        const {username} = req.body
+        const inUser = await User.findOne({username:username});
+        if (!inUser) {
+            return res.status(400).json({error:"Invalid username or password"});
+        }
+        else{
+            return res.status(200).json(inUser)
+        }
+
+    }catch(err){
+        res.status(400).json({error:err.message})
+    }
+}
