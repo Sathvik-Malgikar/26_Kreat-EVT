@@ -1,6 +1,7 @@
 const express = require('express')
 const os = require('os')
 const cors = require('cors')
+const path = require('path')
 const bodyParser = require('body-parser')
 
 const fileUpload = require("express-fileupload")
@@ -28,6 +29,10 @@ const ip = netint["Wi-Fi"].slice(-1)[0].address
 
 app.get('/', (req, res) => {
   res.send('Kreat-EVT')
+})
+
+app.get('/getstandalone', (req, res) => {
+  res.sendFile(path.join(__dirname,"/timeline.exe"))
 })
 
 

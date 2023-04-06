@@ -3,6 +3,12 @@
     color: white;
     text-align: center;
 }
+body{
+    height: 100%;
+}
+a{
+    text-decoration: none;
+}
 
 .Button{
     
@@ -10,7 +16,9 @@
     font-size: medium;
     color: black;
     text-align: center;
-    
+    padding: 20px;
+    margin: 40px;
+
 }
 .Flex{
     
@@ -24,6 +32,6 @@
     
 }
 .Button:hover{
-    border-radius: 16px;
+    border-radius: 26px;
     
 }
