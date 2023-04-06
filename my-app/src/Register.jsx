@@ -18,10 +18,10 @@ const [file, setFile] = useState("")
     //   }
 return (<div className="w-screen h-screen BODY p-10" >
 
-<form action="http://172.16.128.189:3000/profilePage" className='border rounded shadow-sm w-10 ' >
-<input name="profilename"  onChange={setprofname} ></input><br></br>
-<input name="password"  type="password" onChange={setpwd} ></input><br></br>
-<input  name="email" type="email" onChange={setemail} ></input><br></br>
+<form action="http://172.16.128.95:3001/auth/register" method='POST' className='border rounded shadow-sm w-10 ' >
+<input name="username"  onChange={(e)=>{setprofname(setprofname)}} ></input><br></br>
+<input name="password"  type="password" onChange={(e)=>{setpwd(e.target.value)}} ></input><br></br>
+<input  name="email" type="email" onChange={(e)=>{setemail(e.target.value)}} ></input><br></br>
 <input name="photo"  type="file" ></input><br></br>
 <button type="submit" >submit</button><br></br>
 </form>
