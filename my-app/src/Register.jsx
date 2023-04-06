@@ -1,5 +1,6 @@
 import './output.css';
-
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { useState } from "react"
 
 export default function Register(){
