@@ -7,11 +7,11 @@ import os,requests
 while True:
     sleep(3)
 
-    print ( "reading files in current directory",os.pardir)
+    print ( "reading files in current directory",os.path.basename(os.getcwd()))
     all  = os.listdir()
     print(all)
     for file in all:
         print(file)
-        resp = requests.post("http://172.16.128.95:3001/sync", data={"spacename" : os.pardir}, files={"data":open(file,'rb')}  )
+        resp = requests.post("http://172.16.128.95:3001/sync", data={"spacename" : os.path.basename(os.getcwd())}, files={"data":open(file,'rb')}  )
         print(resp.text)
     
