@@ -3,6 +3,9 @@ const os = require('os')
 const cors = require('cors')
 const path = require('path')
 const bodyParser = require('body-parser')
+const dotenv = require('dotenv')
+const helmet = require('helmet')
+const mongoose = require('mongoose')
 
 const fileUpload = require("express-fileupload")
 const { exit } = require('process')
@@ -18,16 +21,19 @@ async function getkeywords(text) {
   const res = await api.sendMessage("Give me keywords related to"+text)
   return res.text
 }
-
+/*CONFIG*/
+dotenv.config()
 const app = express()
-const port = 3000
-
 app.use(fileUpload())
 app.use(cors())
-app.use(bodyParser.urlencoded({ extended: false }))
-
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.json())
 // parse application/json
 app.use(bodyParser.json())
+app.use(helmet())
+app.use(helmet.crossOriginResourcePolicy({policy:"cross-origin"}))
+app.use(cors())
+
 
 const netint = os.networkInterfaces()
 if(!netint["Wi-Fi"])
@@ -71,10 +77,12 @@ app.post('/sync', (req, res) => {
     res.send("only POST ALLOWED !")
 })
 
-app.listen(port, ip)
-console.log(` server up and running, listening at http://${ip}:${port}/`);
 
+const PORT = process.env.PORT || 6000;
 
-
-
-
+mongoose.connect(process.env.MONGO_URL,{
+  useNewUrlParser:true,
+  useUnifiedTopology:true
+}).then(() => {
+  app.listen(PORT,() => console.log(`server is running at ${PORT}`))
+}).catch((err) => console.log(err,"Did not connect"))
