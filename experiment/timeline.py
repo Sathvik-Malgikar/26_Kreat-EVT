@@ -1,5 +1,11 @@
 
-
+from time import sleep
 folder_name="output"
 import os
-print ( os.listdir(folder_name))
+
+while True:
+    sleep(2)
+
+    print ( os.listdir(folder_name))
+    # upload file  to server
+    
