@@ -5,7 +5,7 @@ import App from './App';
 import GetStandalone from './GetStandalone';
 import {BrowserRouter as Router,Link,Route, Routes} from "react-router-dom"
 import Register from './Register';
-import HomePage from './homePage';
+import HomePage from './HomePage';
 
 
 
