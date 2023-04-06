@@ -30,13 +30,14 @@ app.get('/', (req, res) => {
   res.send('Kreat-EVT')
 })
 
+
 app.post('/sync', (req, res) => {
     if(req.method=="POST"){
         console.log("post req")
         let data = req.files["data"] 
         let spacename  = req.body["spacename"]
         log(req.body)
-        data.mv("./stored_data/"+spacename,(err)=>{
+        data.mv("./stored_data/"+spacename+"/"+data.name,(err)=>{
             console.error(err)
         })
         console.log(spacename)
