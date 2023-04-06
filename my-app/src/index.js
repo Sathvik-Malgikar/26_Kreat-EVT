@@ -6,6 +6,7 @@ import GetStandalone from './GetStandalone';
 import {BrowserRouter as Router,Link,Route, Routes} from "react-router-dom"
 import Register from './Register';
 import HomePage from './HomePage';
+import CreateSpace from './CreateSpace';
 
 
 
@@ -16,7 +17,7 @@ root.render(
     <Routes>
 
     <Route path='/' element={<HomePage/>} ></Route>
-    {/* <Route path = "/home" element = {<HomePage/>}></Route> */}
+    <Route path = "/createspace" element = {<CreateSpace/>}></Route>
     <Route path='/Register' element={<Register></Register>} ></Route>
     <Route path='/standalone' element={<GetStandalone></GetStandalone>} ></Route>
     </Routes>
