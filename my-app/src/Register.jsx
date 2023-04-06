@@ -16,14 +16,14 @@ const [file, setFile] = useState("")
     // function handleChange(event) {
     //     setFile(event.target.files[0])
     //   }
-return (<div className="w-screen h-screen BODY" >
+return (<div className="w-screen h-screen BODY p-10" >
 
-<form action="http://172.16.128.189:3000/profilePage" >
-<input name="profilename"  onChange={setprofname} ></input>
-<input name="password"  type="password" onChange={setpwd} ></input>
-<input  name="email" type="email" onChange={setemail} ></input>
-<input name="photo"  type="file" ></input>
-<button type="submit" >submit</button>
+<form action="http://172.16.128.189:3000/profilePage" className='border rounded shadow-sm w-10 ' >
+<input name="profilename"  onChange={setprofname} ></input><br></br>
+<input name="password"  type="password" onChange={setpwd} ></input><br></br>
+<input  name="email" type="email" onChange={setemail} ></input><br></br>
+<input name="photo"  type="file" ></input><br></br>
+<button type="submit" >submit</button><br></br>
 </form>
 </div>)
 
