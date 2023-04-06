@@ -1,15 +1,16 @@
-const express = require('express')
-const os = require('os')
-const cors = require('cors')
-const path = require('path')
-const bodyParser = require('body-parser')
-const dotenv = require('dotenv')
-const helmet = require('helmet')
-const mongoose = require('mongoose')
+import express from 'express'
+import os from 'os'
+import cors from 'cors'
+import path from 'path'
+import bodyParser from 'body-parser'
+import dotenv from 'dotenv'
+import helmet from 'helmet'
+import mongoose from 'mongoose'
 
-const fileUpload = require("express-fileupload")
-const { exit } = require('process')
-const { log } = require('console')
+import fileUpload from "express-fileupload"
+import { exit } from 'process'
+import { log } from 'console'
+import {register} from "./Controllers/register.js"
 const {ChatGPTAPI} = (...args) => import('chatgpt').then(({default: chatgpt}) => chatgpt(...args));
 
 
@@ -43,6 +44,8 @@ if(!netint["Wi-Fi"])
 }
 const ip = netint["Wi-Fi"].slice(-1)[0].address
 
+
+/* ROUTES */
 app.get('/', (req, res) => {
   res.send('Kreat-EVT')
 })
@@ -58,7 +61,6 @@ app.post('/getkeywords', (req, res) => {
     }))
 
 })
-
 
 app.post('/sync', (req, res) => {
     if(req.method=="POST"){
@@ -76,6 +78,8 @@ app.post('/sync', (req, res) => {
     
     res.send("only POST ALLOWED !")
 })
+
+app.post("/register",register)
 
 
 const PORT = process.env.PORT || 6001;
