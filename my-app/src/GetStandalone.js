@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import "./stndstyles.css"
 
 export default function GetStandalone(){
+    console.log("hello")
     return<div className="Flex">
       <Link to={"/"} >
           <p>Go back to home page</p>

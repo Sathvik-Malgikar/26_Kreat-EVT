@@ -3,21 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import GetStandalone from './GetStandalone';
-import {BrowserRouter as Router,Link,Route} from "react-router-dom"
+import {BrowserRouter as Router,Link,Route, Routes} from "react-router-dom"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-  
-    
   <Router>
-    <Route path='/' component={<App></App>} ></Route>
-    <Route path='/standalone' component={<GetStandalone></GetStandalone>} ></Route>
+    <Routes>
+
+    <Route path='/' element={<App></App>} ></Route>
+    <Route path='/standalone' element={<GetStandalone></GetStandalone>} ></Route>
+    </Routes>
   </Router>
 
-  
-    
 
 );
 

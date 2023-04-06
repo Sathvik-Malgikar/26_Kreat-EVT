@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Link to={"standalone"} >
+        <Link to={"/standalone"} >
           <p>Get standalone software</p>
         </Link>
         <p>
