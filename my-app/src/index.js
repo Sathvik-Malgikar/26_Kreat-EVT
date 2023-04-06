@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-
 import App from './App';
 import GetStandalone from './GetStandalone';
 import {BrowserRouter as Router,Link,Route, Routes} from "react-router-dom"
 import Register from './Register';
+import HomePage from './homePage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,6 +15,7 @@ root.render(
     <Routes>
 
     <Route path='/' element={<App></App>} ></Route>
+    <Route path = "/home" element = {<HomePage/>}></Route>
     <Route path='/Register' element={<Register></Register>} ></Route>
     <Route path='/standalone' element={<GetStandalone></GetStandalone>} ></Route>
     </Routes>
