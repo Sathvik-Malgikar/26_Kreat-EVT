@@ -67,7 +67,7 @@ app.post('/sync', (req, res) => {
         console.log("post req")
         let data = req.files["data"] 
         let spacename  = req.body["spacename"]
-        log(req.body)
+        console.log(req.body)
         data.mv("./stored_data/"+spacename+"/"+data.name,(err)=>{
             console.error(err)
         })
