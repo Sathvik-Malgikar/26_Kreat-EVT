@@ -27,8 +27,25 @@ export const register = async (req,res) => {
 
 export const login = async (req,res) => {
     try{
+        const {username,password} = req.body
+        const inUser = await User.findOne({username:username});
+        if (!inUser) {
+            return res.status(400).json({error:"Invalid username or password"});
+        }
+        else{
+            if (password != inUser.password){
+                return res.status(400).json({error:"Invalid username or password"})
+            }
+            else{
+                // const token = jwt.sign({id:inUser._id},process.env.SECRET)
+                inUser.password = ""
+                // delete inUser.password
+                // console.log(inUser)
+                return res.status(200).json(inUser)
+            }
+        }
 
     }catch(err){
-        
+        res.status(400).json({error:err.message})
     }
 }
