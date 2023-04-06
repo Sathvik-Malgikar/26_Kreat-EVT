@@ -1,6 +1,6 @@
-
 import React from "react";
 import { useState } from "react";
+import './input.css'
 
 export default function CreateSpace() {
   const [prof, setprof] = useState("");
@@ -40,10 +40,11 @@ export default function CreateSpace() {
   return (
     <>
       <p>Create a new space and collaborate with peers. </p>
-      <ul>
-        <li>Shared assets</li>
-        <li>View others timeline</li>
-        <li>And more...</li>
+      <ul className="list-inside">
+        <li >Shared assets</li>
+        <li >View others timeline</li>
+        <li >And more...</li>
+
         <div onClick={profhandler}>add to space</div>
         <input
           id="profilebox"
