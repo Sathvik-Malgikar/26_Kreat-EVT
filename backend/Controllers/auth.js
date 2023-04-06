@@ -54,9 +54,11 @@ export const login = async (req,res) => {
 export const logincheck = async (req,res) => {
     try{
         const {username} = req.body
+        // console.log(req.body)
         const inUser = await User.findOne({username:username});
+        // console.log(inUser)
         if (!inUser) {
-            return res.status(400).json({error:"Invalid username or password"});
+            return res.status(404).json({error:"Invalid username or password"});
         }
         else{
             return res.status(200).json(inUser)
@@ -65,4 +67,9 @@ export const logincheck = async (req,res) => {
     }catch(err){
         res.status(400).json({error:err.message})
     }
+}
+
+export const getLogin = async (req,res) => {
+    const user = User.findOne({username:"hi"})
+    return res.status(200).json(user);
 }
