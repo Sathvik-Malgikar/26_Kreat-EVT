@@ -1,0 +1,29 @@
+.Msg{
+    font-size: larger;
+    color: white;
+    text-align: center;
+}
+
+.Button{
+    
+    background-color: greenyellow;
+    font-size: medium;
+    color: black;
+    text-align: center;
+    
+}
+.Flex{
+    
+    background-color: salmon;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items:  center;
+
+    
+}
+.Button:hover{
+    border-radius: 16px;
+    
+}
