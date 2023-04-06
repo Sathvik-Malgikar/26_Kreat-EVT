@@ -15,8 +15,7 @@ const [file, setFile] = useState("")
     // function handleChange(event) {
     //     setFile(event.target.files[0])
     //   }
-return<>
-<div className="w-full h- BODY" >
+return (<div className="w-screen h-screen BODY" >
 
 <form action="http://172.16.128.189:3000/profilePage" >
 <input name="profilename"  onChange={setprofname} ></input>
@@ -25,7 +24,7 @@ return<>
 <input name="photo"  type="file" ></input>
 <button type="submit" >submit</button>
 </form>
-</div>
+</div>)
 
-</>
+
 }
