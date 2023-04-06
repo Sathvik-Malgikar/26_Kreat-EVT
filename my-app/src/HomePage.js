@@ -1,9 +1,16 @@
 import { Link } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom'
 import React from 'react'
-import './output.css'
+import './input.css'
+
 
 
 export default function HomePage(){
+    const navigate = useNavigate()
+
+    const handleClick = ()=>{
+        navigate()
+    }
     return(
         <div className = "">
             <nav className="bg-white border-gray-200 dark:bg-gray-900">
@@ -45,8 +52,14 @@ export default function HomePage(){
                 </div>
             </div>
             </nav>
-            <h1 className='text-6xl text-center' >KREAT-EVT</h1>
+            <div >
             
+            <h1 className='text-6xl text-center CompName animate-bounce' >KREAT-EVT</h1>
+            <div className='getStartedButton'>
+                <button className='bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded ' onClick={handleClick}>Get Started</button>
+            </div>
+            </div>
+           
 
         </div>
 
