@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function HomePage(){
     return(
-        <div class = "dark:bg-gray-900">
+        <div class = ".bg-gray-900">
             <nav class="bg-white border-gray-200 dark:bg-gray-900">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="#" class="flex items-center">
@@ -44,6 +44,8 @@ export default function HomePage(){
                 </div>
             </div>
             </nav>
+            <h1 class = "self-center text-2xl font-semibold whitespace-nowrap dark:text-gray-900">KREAT-EVT</h1>
+            
 
         </div>
 

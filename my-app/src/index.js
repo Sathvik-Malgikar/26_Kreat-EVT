@@ -15,8 +15,8 @@ root.render(
   <Router>
     <Routes>
 
-    <Route path='/' element={<App></App>} ></Route>
-    <Route path = "/home" element = {<HomePage/>}></Route>
+    <Route path='/' element={<HomePage/>} ></Route>
+    {/* <Route path = "/home" element = {<HomePage/>}></Route> */}
     <Route path='/Register' element={<Register></Register>} ></Route>
     <Route path='/standalone' element={<GetStandalone></GetStandalone>} ></Route>
     </Routes>
