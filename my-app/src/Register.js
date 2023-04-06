@@ -16,7 +16,7 @@ const [file, setFile] = useState("")
     //     setFile(event.target.files[0])
     //   }
 return<>
-<div className="w-full h-100% BODY" >
+<div className="w-full h- BODY" >
 
 <form action="http://172.16.128.189:3000/profilePage" >
 <input name="profilename"  onChange={setprofname} ></input>
