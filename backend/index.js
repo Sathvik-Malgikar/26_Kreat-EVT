@@ -10,7 +10,7 @@ import mongoose from 'mongoose'
 import fileUpload from "express-fileupload"
 import { exit } from 'process'
 import { log } from 'console'
-import {register} from "./Controllers/register.js"
+import authRoutes from "./routes/auth.js"
 const {ChatGPTAPI} = (...args) => import('chatgpt').then(({default: chatgpt}) => chatgpt(...args));
 
 
@@ -79,7 +79,8 @@ app.post('/sync', (req, res) => {
     res.send("only POST ALLOWED !")
 })
 
-app.post("/register",register)
+
+app.use("/auth",authRoutes);
 
 
 const PORT = process.env.PORT || 6001;
