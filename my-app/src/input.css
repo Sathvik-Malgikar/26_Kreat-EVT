@@ -3,5 +3,14 @@
 @tailwind utilities;   
 
 .BODY{
-    @apply bg-amber-400 ;
+    @apply bg-gray-900 ;
+}
+
+#register{
+    padding: 50px;
+}
+
+#registerHead{
+    font-size: xx-large;
+    padding: 10px;
 }
