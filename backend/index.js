@@ -78,11 +78,11 @@ app.post('/sync', (req, res) => {
 })
 
 
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 6001;
 
-mongoose.connect(process.env.MONGO_URL,{
-  useNewUrlParser:true,
-  useUnifiedTopology:true
-}).then(() => {
+mongoose.connect(process.env.MONGO_URL,
+  {
+    useUnifiedTopology:true,
+  }).then(() => {
   app.listen(PORT,() => console.log(`server is running at ${PORT}`))
 }).catch((err) => console.log(err,"Did not connect"))
