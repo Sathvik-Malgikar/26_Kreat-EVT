@@ -1,5 +1,4 @@
 from time import sleep
-from apicommunicate import getresp
 print("enter space/folder name")
 # folder_name=input()
 folder_name = "BlenderWorkspace"
