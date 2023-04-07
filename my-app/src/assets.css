@@ -10,9 +10,12 @@ body{
 }
 .GREEN{
     border-radius: 6px;
-    margin: 10px;
+    margin: 50px;
     background-color: green;
     color: black;
     text-align: center;
     padding: 10px;
+}
+.MAR{
+    margin: 20px;
 }
