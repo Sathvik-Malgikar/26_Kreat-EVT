@@ -7,7 +7,7 @@ import dotenv from 'dotenv'
 import helmet from 'helmet'
 import mongoose from 'mongoose'
 import fs from 'fs'
-
+import { predict } from './api/dall-e.js'
 import fileUpload from "express-fileupload"
 import { exit } from 'process'
 import cloudinary from "cloudinary"
@@ -66,6 +66,20 @@ app.post('/getkeywords', (req, res) => {
     }))
 
 })
+app.post('/genimage', (req, res) => {
+    let text  = req.body.imgdata;
+    console.log(text,"genimg")
+    predict(text).then( (value) =>{
+      res.status(200).json({url:value})
+      }
+    ).catch((err) => {
+      res.status(400).json({error:err.message})
+    })
+    
+
+})
+
+
 let counter=0
 app.post('/sync', (req, res) => {
     if(req.method=="POST"){
