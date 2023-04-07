@@ -8,7 +8,7 @@ export default function FindAssets(){
     const [dimg, setdimg] = useState(null)
    
     function getimage(e){
-return
+
         if(space=='') return
 
 
@@ -25,9 +25,12 @@ return
       }).then(resp=>{
         resp.json().then(data=>{
             console.log(data)
-            setdimg(require(data["url"]))
+            setdimg(data["url"])
         });
       })
+
+      setdimg("Generating Assets...Please wait")
+
 
     }
 
@@ -35,7 +38,8 @@ return
     return(<div >
     <p className="MAR" >Search for assets based on space</p>
    <input className="MAR"  onChange={(e)=>{setspace(e.target.value)}} value={space} ></input>
-   <span onClick={getimage} className="GREEN" >Get assets</span>
+   <span onClick={getimage} className="GREEN" >Generate assets</span>
+
   {space=='desert battle'? <div className="GRID" >
    <span  >
     <img src={require("./beach-5243072__340.jpg")}  ></img>
@@ -74,6 +78,10 @@ return
    </span>
   
    </div>:<><h3>Enter a space name to find assets and get started!</h3></>}
+
+{dimg==""?<></>:dimg=='Generating Assets...Please wait'?<p>Generating Assets...Please wait</p>:<p>{<img src={dimg} ></img>}</p>}
+   <br></br><br></br>
+   <br></br><br></br>
     </div>
 
 
