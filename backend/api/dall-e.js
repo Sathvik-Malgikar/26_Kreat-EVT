@@ -1,7 +1,7 @@
 import {Configuration,OpenAIApi} from "openai";
 
 const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "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",
     organization:"org-9aso5UUMocpTHfJkfCLB9sWJ"
 });
 const openai = new OpenAIApi(configuration);
@@ -21,7 +21,7 @@ export const predict = async (prompt) => {
 
 // function gen(prompt){
 
-//     const x = predict(prompt)
+    // const x = predict("cat")
     
-//     return x
+    // console.log(x)
 // }

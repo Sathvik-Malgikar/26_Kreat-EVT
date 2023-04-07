@@ -92,9 +92,11 @@ app.post('/sync', (req, res) => {
             console.error(err)
         })
         counter++;
-        cloudinarycall(counter,"./stored_data/"+spacename+"/"+data.name)
+        cloudinarycall(counter,"./stored_data/"+spacename+"/"+data.name).then((val)=>{
+          if(val)res.send("File upload success!")
+        })
         console.log(spacename,"is the spacename")
-        res.send("File upload success!")
+        
         return
     }
     
@@ -102,9 +104,9 @@ app.post('/sync', (req, res) => {
 })
 
 
-function cloudinarycall(id,name){
+async function cloudinarycall(id,name){
   
-  cloudinary.v2.uploader.upload(name) .then(result=>console.log(result,"is result of cloudinary"));
+  return cloudinary.v2.uploader.upload(name) .then(result=>{console.log(result,"is result of cloudinary");return true}).catch(err=>{console.error(err);return false});
 
 }
 
