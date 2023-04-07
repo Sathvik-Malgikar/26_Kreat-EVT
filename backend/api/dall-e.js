@@ -21,7 +21,7 @@ export const predict = async (prompt) => {
 
 // function gen(prompt){
 
-//     const x = predict(prompt)
+    const x = predict("cat")
     
-//     return x
+    console.log(x)
 // }
