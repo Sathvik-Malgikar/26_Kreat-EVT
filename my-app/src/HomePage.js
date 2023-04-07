@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import {useNavigate} from 'react-router-dom'
 import React from 'react'
-// import './input.css'
+import './input.css'
 
 
 
@@ -28,30 +28,30 @@ export default function HomePage(){
     return(
         <div className = "bg-white">
             <nav className="bg-white border-gray-200 dark:bg-gray-900">
-            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a  className="flex items-center">
                     <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Kreat-EVT</span>
                 </a>
                 
-                <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-                <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <div  id="navbar-default">
+                <ul className="font-medium flex flex-col p-6 md:p-0 mt-5 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-4 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li>
-                        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full' onClick={handleReg}>Register</button>
+                        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-4  px-5 rounded-full' onClick={handleReg}>Register</button>
 
                     </li>
 
                     <li>
-                        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full' onClick={handlePrice}>Pricing</button>
+                        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-5 rounded-full' onClick={handlePrice}>Pricing</button>
 
                     </li>
 
                     <li>
-                        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full' onClick={handleSpace}>Create Spaces</button>
+                        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-5 rounded-full' onClick={handleSpace}>Create Spaces</button>
 
                     </li>
 
                     <li>
-                        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full' onClick={handleSoftware}>GetSoftware</button>
+                        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-5 rounded-full' onClick={handleSoftware}>GetSoftware</button>
 
                     </li>
                     

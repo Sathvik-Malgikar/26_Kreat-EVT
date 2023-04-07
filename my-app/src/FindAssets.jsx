@@ -7,7 +7,7 @@ export default function FindAssets(){
     const [space, setspace] = useState("")
    
 
-    return<div >
+    return(<div >
     <p>Search for assets based on space</p>
    <input onChange={(e)=>{setspace(e.target.value)}} value={space} ></input>
   {space!=''? <div className="GRID" >
@@ -27,4 +27,5 @@ export default function FindAssets(){
    </div>
    </div>:<></>}
     </div>
+    )
 }
