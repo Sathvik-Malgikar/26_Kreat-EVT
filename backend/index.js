@@ -10,9 +10,9 @@ import fs from 'fs'
 
 import fileUpload from "express-fileupload"
 import { exit } from 'process'
-import { log } from 'console'
 import cloudinary from "cloudinary"
 import authRoutes from "./routes/auth.js"
+import usersRoutes from "./routes/users.js"
 const {ChatGPTAPI} = (...args) => import('chatgpt').then(({default: chatgpt}) => chatgpt(...args));
 
 
@@ -96,6 +96,8 @@ function cloudinarycall(id,name){
 
 
 app.use("/auth",authRoutes);
+
+app.use("/users",usersRoutes);
 
 
 const PORT = process.env.PORT || 6001;

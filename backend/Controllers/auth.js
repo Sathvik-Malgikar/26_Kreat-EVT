@@ -14,7 +14,11 @@ export const register = async (req,res) => {
         const newUser = new User({
             username,
             password,
-            email
+            email,
+            spaces : {
+                mySpace : [],
+                groupSpaces : []
+            }
         });
 
         const savedUser = await newUser.save();
