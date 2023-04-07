@@ -1,8 +1,7 @@
 import express from "express"
 import {
     getUser,
-    createSpaceSingle,
-    createSpaceMulti
+    createSpace
 } from "../Controllers/users.js"
 
 const router = express.Router()
