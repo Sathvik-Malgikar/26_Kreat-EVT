@@ -22,7 +22,7 @@ a{
 }
 .Flex{
     
-    background-color: salmon;
+    background-color: rgb(249, 127, 114);
     color: black;
     display: flex;
     flex-direction: column;
