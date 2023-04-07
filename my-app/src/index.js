@@ -5,7 +5,7 @@ import App from './App';
 import GetStandalone from './GetStandalone';
 import {BrowserRouter as Router,Link,Route, Routes} from "react-router-dom"
 import Register from './Register';
-
+import Login from './login';
 import FindAssets from './FindAssets.jsx';
 import HomePage from './HomePage';
 import CreateSpace from './CreateSpace';
@@ -22,7 +22,7 @@ root.render(
     <Route path = '/createspace' element = {<CreateSpace></CreateSpace>}></Route>
     <Route path='/Register' element={<Register></Register>} ></Route>
     <Route path='/FindAssets' element={<FindAssets></FindAssets>} ></Route>
-  
+    <Route path='/login' element={<Login/>} ></Route>
     <Route path='/standalone' element={<GetStandalone></GetStandalone>} ></Route>
     </Routes>
   </Router>
