@@ -1,7 +1,20 @@
-import { Configuration, OpenAIApi } from "openai";
+import {Configuration,OpenAIApi} from "openai";
+
 const configuration = new Configuration({
-    organization: "YOUR_ORG_ID",
     apiKey: process.env.OPENAI_API_KEY,
+    organization:"org-BCZzQbSSJ7XMuCHgdvpiteXR"
 });
 const openai = new OpenAIApi(configuration);
-const response = await openai.listEngines();
+
+export const predict = async (prompt) => {
+    console.log(process.env.OPENAI_API_KEY)
+    const response = await openai.createImage({
+        prompt:prompt,
+        n:1,
+        size:"256x256"
+    });
+    return response;
+}
+
+const x = predict("cat");
+// console.log(x.status)
