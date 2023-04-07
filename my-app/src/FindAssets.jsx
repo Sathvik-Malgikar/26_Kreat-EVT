@@ -1,6 +1,6 @@
 import React, { useState }  from "react"
 import "./assets.css"
-
+import "./output.css"
 
 export default function FindAssets(){
 
@@ -8,7 +8,8 @@ export default function FindAssets(){
     const [dimg, setdimg] = useState(null)
    
     function getimage(e){
-
+return
+        if(space=='') return
 
 
     fetch("http://172.16.128.95:3001/genimage", {
@@ -32,8 +33,8 @@ export default function FindAssets(){
 
 
     return(<div >
-    <p>Search for assets based on space</p>
-   <input  onChange={(e)=>{setspace(e.target.value)}} value={space} ></input>
+    <p className="MAR" >Search for assets based on space</p>
+   <input className="MAR"  onChange={(e)=>{setspace(e.target.value)}} value={space} ></input>
    <span onClick={getimage} className="GREEN" >Get assets</span>
   {space=='desert battle'? <div className="GRID" >
    <span  >
@@ -52,28 +53,27 @@ export default function FindAssets(){
    </div>
    </div>:space=='app logo design'?<div className="GRID" >
    <span  >
-    
+   <img src={require("./download.jpeg")}  ></img>
    <a  href="logomaker.com" ><h2>logomaker.com</h2></a>
    </span>
    <span>
    <img src={require("./download.png")}  ></img>
-   <a href="https://drive.google.com/file/d/1AfkYHvKD0ftctKMa28Qmsevc4JxsGdLR/view?usp=share_link"  ><h2>A basic beginner template for logo design</h2></a>
+   <a href="https://drive.google.com/file/d/1AfkYHvKD0ftctKMa28Qmsevc4JxsGdLR/view?usp=share_link"  ><h2 className="text-xl"  >A basic beginner template for logo design</h2></a>
 
    </span>
   
-   </div>:space=="music-lofi"?<div className="GRID" >
+   </div>:space=="lofi music"?<div className="GRID" >
    <span  >
-    
-   <a  href="https://drive.google.com/file/d/1eBzy2Po4hcJBiOKAmEUmcB2NZkkPIcOx/view?usp=share_link" ><h2>chopped vocals male+female voice for LO-Fi</h2></a>
+   <img  width={"200px"} src={require("./unnamed.png")}  ></img>
+   <a  href="https://drive.google.com/file/d/1eBzy2Po4hcJBiOKAmEUmcB2NZkkPIcOx/view?usp=share_link" ><h1 className="text-xl" >chopped vocals male+female voice for LO-Fi</h1></a>
    </span>
    <span>
-   
-   <a href="image-line.com"  ><h2>FL studio Docs</h2></a>
+   <img width={"200px"} src={require("./unnamed.png")}  ></img>
+   <a href="image-line.com"  ><h1>FL studio Docs</h1></a>
 
    </span>
   
    </div>:<><h3>Enter a space name to find assets and get started!</h3></>}
-        {dimg==null?<></>:<img  src={dimg} ></img>}
     </div>
 
 
