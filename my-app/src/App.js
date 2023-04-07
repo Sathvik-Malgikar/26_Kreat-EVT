@@ -1,6 +1,5 @@
 
 import { Link } from 'react-router-dom';
-
 import './output.css';
 import React from 'react'
 import ReactDOM from 'react-dom'

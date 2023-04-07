@@ -8,6 +8,7 @@ import {BrowserRouter as Router,Link,Route, Routes} from "react-router-dom"
 import Register from './Register';
 import Exchange from './Exchange';
 import UserPage from './UserPage.jsx';
+import login   from './login.jsx';
 import FindAssets from './FindAssets.jsx';
 import HomePage from './HomePage';
 import CreateSpace from './CreateSpace';
@@ -26,6 +27,7 @@ root.render(
     <Route path='/Register' element={<Register></Register>} ></Route>
     <Route path='/FindAssets' element={<FindAssets></FindAssets>} ></Route>
     <Route path='/UserPage' element={<UserPage></UserPage>} ></Route>
+    <Route path='/login' element={<login></login>} ></Route>
     <Route path='/standalone' element={<GetStandalone></GetStandalone>} ></Route>
     </Routes>
   </Router>
