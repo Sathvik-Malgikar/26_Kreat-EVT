@@ -35,6 +35,10 @@ const UserSchema = new mongoose.Schema({
     spaces:{
         type:Object,
         default:{}
+    },
+    kreatCoins:{
+        type:Number,
+        default:0
     }
 })
 
