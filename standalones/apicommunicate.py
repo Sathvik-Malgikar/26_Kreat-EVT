@@ -1,5 +1,5 @@
 import openai
-openai.api_key = "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"
+openai.api_key = "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"
 
 def getresp(text):
     completion =  openai.Completion.create(
@@ -13,3 +13,4 @@ def getresp(text):
         textsum+=choice.text,"\n\n"
         
     return textsum
+
