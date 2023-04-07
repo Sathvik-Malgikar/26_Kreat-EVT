@@ -1,4 +1,3 @@
-import { response } from "express";
 import {Configuration,OpenAIApi} from "openai";
 
 const configuration = new Configuration({
