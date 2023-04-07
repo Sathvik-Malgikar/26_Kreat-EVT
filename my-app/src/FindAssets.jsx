@@ -5,11 +5,36 @@ import "./assets.css"
 export default function FindAssets(){
 
     const [space, setspace] = useState("")
+    const [dimg, setdimg] = useState(null)
    
+    function getimage(e){
+
+
+
+    fetch("http://172.16.128.95:3001/genimage", {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: JSON.stringify({ "imgdata": space }),
+      }).then(resp=>{
+        resp.json().then(data=>{
+            console.log(data)
+            setdimg(require(data["url"]))
+        });
+      })
+
+    }
+
 
     return(<div >
     <p>Search for assets based on space</p>
-   <input onChange={(e)=>{setspace(e.target.value)}} value={space} ></input>
+   <input  onChange={(e)=>{setspace(e.target.value)}} value={space} ></input>
+   <span onClick={getimage} className="GREEN" >Get assets</span>
   {space=='desert battle'? <div className="GRID" >
    <span  >
     <img src={require("./beach-5243072__340.jpg")}  ></img>
@@ -48,6 +73,9 @@ export default function FindAssets(){
    </span>
   
    </div>:<><h3>Enter a space name to find assets and get started!</h3></>}
+        {dimg==null?<></>:<img  src={dimg} ></img>}
     </div>
+
+
     )
 }
