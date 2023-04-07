@@ -25,40 +25,39 @@ export default function HomePage(){
     const handleSoftware = ()=>{
         navigate('/standalone')
     }
+
+    const handleLogin = ()=>{
+        navigate('/login')
+    }
     return(
         <div className = "bg-white">
             <nav className="bg-white border-gray-200 dark:bg-gray-900">
-            <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <a  className="flex items-center">
-                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Kreat-EVT</span>
-                </a>
-                
-                <div  id="navbar-default">
-                <ul className="font-medium flex flex-col p-6 md:p-0 mt-5 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-4 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                    <li>
-                        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-4  z-10 px-5 rounded-full' onClick={handleReg}>Register</button>
+  <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-5">
+    <a className="flex items-center">
+      <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Kreat-EVT</span>
+    </a>
+    <div id="navbar-default">
+      <ul className="font-medium flex flex-col p-6 md:p-0 mt-5 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-4 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-5 z-10 rounded-full" onClick={handleLogin}>Login</button>
+        </li>
+        <li>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-5 z-10 rounded-full" onClick={handleReg}>Register</button>
+        </li>
+        <li>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-5 z-10 rounded-full" onClick={handleSpace}>Create Spaces</button>
+        </li>
+        <li>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-5 z-10 rounded-full" onClick={handlePrice}>Pricing</button>
+        </li>
+        <li>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-5 z-10 rounded-full" onClick={handleSoftware}>Get Software</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-                    </li>
-
-                    <li>
-                        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-5 z-10 rounded-full' onClick={handlePrice}>Pricing</button>
-
-                    </li>
-
-                    <li>
-                        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-4  z-10 px-5 rounded-full' onClick={handleSpace}>Create Spaces</button>
-
-                    </li>
-
-                    <li>
-                        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-5  z-10 rounded-full' onClick={handleSoftware}>GetSoftware</button>
-
-                    </li>
-                    
-                </ul>
-                </div>
-            </div>
-            </nav>
 
             
             <h1 className='text-6xl text-center CompName animate-bounce'>KREAT-EVT</h1>

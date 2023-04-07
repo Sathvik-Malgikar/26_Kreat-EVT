@@ -1,0 +1,17 @@
+.mungaru{
+    border-radius: 20px;
+    background-color: aliceblue;
+    
+    color: black;
+    font-size: large;
+    margin: 50px;
+
+}
+
+.left{
+left: 0;
+}
+#leftmost{
+    position: relative;
+    left: 0;
+}
