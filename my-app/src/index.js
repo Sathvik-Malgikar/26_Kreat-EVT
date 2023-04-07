@@ -8,7 +8,7 @@ import {BrowserRouter as Router,Link,Route, Routes} from "react-router-dom"
 import Register from './Register';
 import Exchange from './Exchange';
 import UserPage from './UserPage.jsx';
-import login   from './login.jsx';
+import login   from './login.js';
 import FindAssets from './FindAssets.jsx';
 import HomePage from './HomePage';
 import CreateSpace from './CreateSpace';
