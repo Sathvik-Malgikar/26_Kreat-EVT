@@ -12,7 +12,7 @@ export default function FindAssets(){
         if(space=='') return
 
 
-    fetch("http://172.16.128.95:3001/genimage", {
+    fetch("http://172.16.128.175:3001/genimage", {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         mode: "cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached

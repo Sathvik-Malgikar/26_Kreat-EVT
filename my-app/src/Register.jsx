@@ -14,7 +14,7 @@ const [file, setFile] = useState("")
     // function submit(){
 
     //     let submitdata={"profileName" : profname,"password" : pwd,"email":email}
-    //     fetch("http://172.16.128.189:3000/profilePage",{method : "POST" , body : submitdata, fil})
+    //     fetch("http://172.16.128.175:3001/profilePage",{method : "POST" , body : submitdata, fil})
     // }
     // function handleChange(event) {
     //     setFile(event.target.files[0])

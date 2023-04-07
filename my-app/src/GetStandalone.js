@@ -14,7 +14,7 @@ export default function GetStandalone(){
         </Link>
         <p className="Msg" >Get the standalone exe run it from your space to start building the Timeline</p>
         <br></br>
-        <a href='http://172.16.128.189:3000/getstandalone' >
+        <a href='http://172.16.128.175:3001/getstandalone' >
 
         <div  className="Button" >Download for windows 64-bit</div>
         </a>
