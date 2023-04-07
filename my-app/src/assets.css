@@ -4,3 +4,7 @@
     grid-template-columns: 1fr 1fr;
     color: blue;
 }
+
+body{
+    background-color: salmon;
+}
