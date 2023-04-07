@@ -7,7 +7,6 @@ import {
 const router = express.Router()
 
 router.get("/:id",getUser);
-router.post("/:id/createSpaceSingle",createSpaceSingle)
-router.post("/:id/createSpaceMulti",createSpaceMulti);
+router.post("/:id/createSpace",createSpace)
 
 export default router
