@@ -6,12 +6,17 @@ import bodyParser from 'body-parser'
 import dotenv from 'dotenv'
 import helmet from 'helmet'
 import mongoose from 'mongoose'
+import fs from 'fs'
 
 import fileUpload from "express-fileupload"
 import { exit } from 'process'
-import { log } from 'console'
+import cloudinary from "cloudinary"
 import authRoutes from "./routes/auth.js"
+import usersRoutes from "./routes/users.js"
 const {ChatGPTAPI} = (...args) => import('chatgpt').then(({default: chatgpt}) => chatgpt(...args));
+
+
+cloudinary.config({ cloud_name: 'dbdusuqpn', api_key: '866851888363871', api_secret: 'X-9yVuA8MouOT5GwzAbsck34JPA', secure: false });
 
 
 async function getkeywords(text) {
@@ -61,17 +66,20 @@ app.post('/getkeywords', (req, res) => {
     }))
 
 })
-
+let counter=0
 app.post('/sync', (req, res) => {
     if(req.method=="POST"){
         console.log("post req")
         let data = req.files["data"] 
         let spacename  = req.body["spacename"]
         console.log(req.body)
+        fs.mkdirSync("./stored_data/"+spacename,{recursive : true})
         data.mv("./stored_data/"+spacename+"/"+data.name,(err)=>{
             console.error(err)
         })
-        console.log(spacename)
+        counter++;
+        cloudinarycall(counter,"./stored_data/"+spacename+"/"+data.name)
+        console.log(spacename,"is the spacename")
         res.send("File upload success!")
         return
     }
@@ -80,7 +88,16 @@ app.post('/sync', (req, res) => {
 })
 
 
+function cloudinarycall(id,name){
+  
+  cloudinary.v2.uploader.upload(name) .then(result=>console.log(result,"is result of cloudinary"));
+
+}
+
+
 app.use("/auth",authRoutes);
+
+app.use("/users",usersRoutes);
 
 
 const PORT = process.env.PORT || 6001;

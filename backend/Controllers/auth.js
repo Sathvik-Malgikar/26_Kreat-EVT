@@ -14,7 +14,11 @@ export const register = async (req,res) => {
         const newUser = new User({
             username,
             password,
-            email
+            email,
+            spaces : {
+                mySpace : [],
+                groupSpaces : []
+            }
         });
 
         const savedUser = await newUser.save();
@@ -54,7 +58,7 @@ export const login = async (req,res) => {
 export const logincheck = async (req,res) => {
     try{
         const {username} = req.body
-        // console.log(req.body)
+        console.log(req.body)
         const inUser = await User.findOne({username:username});
         // console.log(inUser)
         if (!inUser) {
